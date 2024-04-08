@@ -168,7 +168,7 @@ class Face_Recognizer:
         if existing_entry:
             print(f"{name} is already marked as present for {current_date}")
         else:
-            current_time = datetime.datetime.now().strftime('%H:%M:%S')
+            current_time = datetime.datetime.now().strftime('%I:%M:%p')
             cursor.execute("INSERT INTO attendance (name, time, date) VALUES (?, ?, ?)", (name, current_time, current_date))
             conn.commit()
             print(f"{name} marked as present for {current_date} at {current_time}")
